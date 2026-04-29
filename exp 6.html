@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I2IT TechCon 2025</title>
+
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        background: linear-gradient(to right, #e3f2fd, #ffffff);
+    }
+
+    /* HEADER */
+    header {
+        background: linear-gradient(to right, #0d47a1, #1976d2);
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    header p {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    /* NAVBAR */
+    nav {
+        background: #1565c0;
+        text-align: center;
+        padding: 12px;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 20px;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        background: white;
+        color: #1565c0;
+        border-radius: 5px;
+    }
+
+    /* CONTAINER */
+    .container {
+        width: 80%;
+        margin: 30px auto;
+    }
+
+    /* CARD STYLE */
+    .card {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    h2 {
+        color: #0d47a1;
+    }
+
+    /* TABLE */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th {
+        background: #1976d2;
+        color: white;
+        padding: 12px;
+    }
+
+    td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    tr:nth-child(even) {
+        background: #f2f2f2;
+    }
+
+    tr:hover {
+        background: #e3f2fd;
+    }
+
+    /* FORM */
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+        border-color: #1976d2;
+        box-shadow: 0 0 5px #1976d2;
+        outline: none;
+    }
+
+    input[type="submit"] {
+        background: linear-gradient(to right, #28a745, #4caf50);
+        color: white;
+        border: none;
+        margin-top: 15px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+        transform: scale(1.05);
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 15px;
+        background: #0d47a1;
+        color: white;
+        margin-top: 20px;
+    }
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>I2IT TechCon 2025</h1>
+    <p>Explore Innovation | Technology | Future</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+    <div class="card" id="about">
+        <h2>About</h2>
+        <p>This event brings together developers, students, and innovators to explore modern technologies like AI, Web Development, and Cloud Computing.</p>
+    </div>
+
+    <div class="card" id="schedule">
+        <h2>Schedule</h2>
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Event</th>
+            </tr>
+            <tr>
+                <td>10:00 AM</td>
+                <td>Opening Ceremony</td>
+            </tr>
+            <tr>
+                <td>11:00 AM</td>
+                <td>AI Workshop</td>
+            </tr>
+            <tr>
+                <td>1:00 PM</td>
+                <td>Lunch Break</td>
+            </tr>
+            <tr>
+                <td>2:00 PM</td>
+                <td>Web Development Session</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card" id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label>Name:</label>
+            <input type="text" required>
+
+            <label>Email:</label>
+            <input type="email" required>
+
+            <label>Message:</label>
+            <textarea rows="3"></textarea>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 I2IT TechCon | All Rights Reserved
+</footer>
+
+</body>
+</html>

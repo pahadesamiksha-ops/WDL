@@ -1,0 +1,246 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Area Calculator</title>
+
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .calculator {
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(10px);
+        padding: 25px;
+        border-radius: 15px;
+        width: 320px;
+        text-align: center;
+        color: white;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    input, select {
+        width: 90%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: linear-gradient(to right, #00c9ff, #92fe9d);
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+
+    #result {
+        margin-top: 15px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+function calculateArea() {
+
+    let shape = document.getElementById("shape").value;
+    let val1 = parseFloat(document.getElementById("val1").value);
+    let val2 = parseFloat(document.getElementById("val2").value);
+    let result;
+
+    switch(shape) {
+
+        case "rectangle":
+            result = val1 * val2;
+            break;
+
+        case "triangle":
+            result = 0.5 * val1 * val2;
+            break;
+
+        case "circle":
+            result = 3.14 * val1 * val1;
+            break;
+
+        default:
+            result = "Invalid selection";
+    }
+
+    document.getElementById("result").innerHTML = "Area: " + result;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="calculator">
+    <h2>Area Calculator</h2>
+
+    <select id="shape">
+        <option value="rectangle">Rectangle</option>
+        <option value="triangle">Triangle</option>
+        <option value="circle">Circle</option>
+    </select>
+
+    <input type="number" id="val1" placeholder="Enter value 1">
+    <input type="number" id="val2" placeholder="Enter value 2">
+
+    <button onclick="calculateArea()">Calculate</button>
+
+    <div id="result"></div>
+</div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Button Calculator</title>
+
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .calculator {
+        background: #222;
+        padding: 20px;
+        border-radius: 15px;
+        width: 250px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+
+    #display {
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-align: right;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .num {
+        background: #444;
+        color: white;
+    }
+
+    .op {
+        background: orange;
+        color: white;
+    }
+
+    .equal {
+        background: green;
+        color: white;
+        grid-column: span 2;
+    }
+
+    .clear {
+        background: red;
+        color: white;
+        grid-column: span 2;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+<script>
+function insert(val) {
+    document.getElementById("display").value += val;
+}
+
+function calculate() {
+    let exp = document.getElementById("display").value;
+    try {
+        document.getElementById("display").value = eval(exp);
+    } catch {
+        document.getElementById("display").value = "Error";
+    }
+}
+
+function clearDisplay() {
+    document.getElementById("display").value = "";
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="calculator">
+
+    <input type="text" id="display" readonly>
+
+    <div class="buttons">
+
+        <button class="num" onclick="insert('7')">7</button>
+        <button class="num" onclick="insert('8')">8</button>
+        <button class="num" onclick="insert('9')">9</button>
+        <button class="op" onclick="insert('/')">/</button>
+
+        <button class="num" onclick="insert('4')">4</button>
+        <button class="num" onclick="insert('5')">5</button>
+        <button class="num" onclick="insert('6')">6</button>
+        <button class="op" onclick="insert('*')">*</button>
+
+        <button class="num" onclick="insert('1')">1</button>
+        <button class="num" onclick="insert('2')">2</button>
+        <button class="num" onclick="insert('3')">3</button>
+        <button class="op" onclick="insert('-')">-</button>
+
+        <button class="num" onclick="insert('0')">0</button>
+        <button class="num" onclick="insert('.')">.</button>
+        <button class="op" onclick="insert('+')">+</button>
+
+        <button class="clear" onclick="clearDisplay()">C</button>
+        <button class="equal" onclick="calculate()">=</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

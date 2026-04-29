@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Quiz</title>
+
+<style>
+    body {
+        font-family: Arial;
+        background: linear-gradient(to right, #6637cd, #3b52b9);
+        margin: 0;
+        padding: 20px;
+        color: white;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: auto;
+        background: rgba(210, 203, 203, 0.582);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .question {
+        margin-top: 15px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px;
+        width: 100%;
+        background: #00c9ff;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background: #0099cc;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+function checkAnswers() {
+
+    let score = 0;
+
+    let answers = ["b","a","c","d","a","b","c","d","a","b"];
+
+    for (let i = 1; i <= 10; i++) {
+        let q = document.querySelector('input[name="q'+i+'"]:checked');
+        if (q && q.value === answers[i-1]) {
+            score++;
+        }
+    }
+
+    document.getElementById("result").innerHTML = 
+        "Your Score: " + score + " / 10";
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Simple Quiz</h1>
+
+<form>
+
+<!-- Question 1 -->
+<div class="question">
+<p>1. HTML stands for?</p>
+<input type="radio" name="q1" value="a"> Hyper Tool Markup Language<br>
+<input type="radio" name="q1" value="b"> Hyper Text Markup Language<br>
+<input type="radio" name="q1" value="c"> Home Tool Markup Language<br>
+</div>
+
+<!-- Question 2 -->
+<div class="question">
+<p>2. CSS is used for?</p>
+<input type="radio" name="q2" value="a"> Styling<br>
+<input type="radio" name="q2" value="b"> Programming<br>
+<input type="radio" name="q2" value="c"> Database<br>
+</div>
+
+<!-- Question 3 -->
+<div class="question">
+<p>3. JS stands for?</p>
+<input type="radio" name="q3" value="a"> Java System<br>
+<input type="radio" name="q3" value="b"> Just Script<br>
+<input type="radio" name="q3" value="c"> JavaScript<br>
+</div>
+
+<!-- Question 4 -->
+<div class="question">
+<p>4. Which is backend?</p>
+<input type="radio" name="q4" value="a"> HTML<br>
+<input type="radio" name="q4" value="b"> CSS<br>
+<input type="radio" name="q4" value="c"> JS<br>
+<input type="radio" name="q4" value="d"> PHP<br>
+</div>
+
+<!-- Question 5 -->
+<div class="question">
+<p>5. Which tag for link?</p>
+<input type="radio" name="q5" value="a"> a<br>
+<input type="radio" name="q5" value="b"> p<br>
+<input type="radio" name="q5" value="c"> h1<br>
+</div>
+
+<!-- Question 6 -->
+<div class="question">
+<p>6. Bootstrap is?</p>
+<input type="radio" name="q6" value="a"> Language<br>
+<input type="radio" name="q6" value="b"> Framework<br>
+<input type="radio" name="q6" value="c"> DB<br>
+</div>
+
+<!-- Question 7 -->
+<div class="question">
+<p>7. SQL is for?</p>
+<input type="radio" name="q7" value="a"> Styling<br>
+<input type="radio" name="q7" value="b"> Logic<br>
+<input type="radio" name="q7" value="c"> Database<br>
+</div>
+
+<!-- Question 8 -->
+<div class="question">
+<p>8. PHP is?</p>
+<input type="radio" name="q8" value="a"> Frontend<br>
+<input type="radio" name="q8" value="b"> Styling<br>
+<input type="radio" name="q8" value="c"> Script<br>
+<input type="radio" name="q8" value="d"> Backend<br>
+</div>
+
+<!-- Question 9 -->
+<div class="question">
+<p>9. JS runs on?</p>
+<input type="radio" name="q9" value="a"> Browser<br>
+<input type="radio" name="q9" value="b"> Server<br>
+<input type="radio" name="q9" value="c"> DB<br>
+</div>
+
+<!-- Question 10 -->
+<div class="question">
+<p>10. Form tag is?</p>
+<input type="radio" name="q10" value="a"> input<br>
+<input type="radio" name="q10" value="b"> form<br>
+<input type="radio" name="q10" value="c"> div<br>
+</div>
+
+<button type="button" onclick="checkAnswers()">Submit Quiz</button>
+
+<div id="result"></div>
+
+</form>
+
+</div>
+
+</body>
+</html>

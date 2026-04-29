@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodies Restaurant</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: #f8f9fa;
+    }
+
+    /* NAVBAR */
+    nav {
+        background: #222;
+        color: white;
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav h1 {
+        margin: 0;
+    }
+
+    /* HERO */
+    .hero {
+        background: url('https://picsum.photos/1200/400') center/cover;
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+    }
+
+    .hero h2 {
+        font-size: 40px;
+    }
+
+    /* MENU GRID */
+    .menu {
+        padding: 40px;
+    }
+
+    .menu h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .price {
+        color: green;
+        font-weight: bold;
+    }
+
+    /* GALLERY */
+    .gallery {
+        padding: 40px;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .gallery img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /* FOOTER */
+    footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 15px;
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h1>🍽 Foodies Restaurant</h1>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h2>Delicious Food, Happy Mood</h2>
+    <p>Enjoy the best dishes in town</p>
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <h2>Our Menu</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://picsum.photos/200" alt="">
+            <h3>Pizza</h3>
+            <p>Cheesy delight</p>
+            <p class="price">₹250</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/201" alt="">
+            <h3>Burger</h3>
+            <p>Juicy and tasty</p>
+            <p class="price">₹150</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/202" alt="">
+            <h3>Pasta</h3>
+            <p>Italian special</p>
+            <p class="price">₹200</p>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/203" alt="">
+            <h3>Cold Drink</h3>
+            <p>Refreshing</p>
+            <p class="price">₹80</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery">
+    <h2 style="text-align:center;">Gallery</h2>
+
+    <div class="gallery-grid">
+        <img src="https://picsum.photos/300">
+        <img src="https://picsum.photos/301">
+        <img src="https://picsum.photos/302">
+        <img src="https://picsum.photos/303">
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Foodies Restaurant</p>
+</footer>
+
+</body>
+</html>

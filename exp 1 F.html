@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #dfe9f3, #ffffff);
+            margin: 0;
+        }
+
+        h1 {
+            background-color: #ff3b3b;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            width: 400px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background: linear-gradient(to right, #28a745, #4caf50);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Portfolio</h1>
+
+    <div class="container">
+        <form>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label>Course:</label>
+            <input type="radio" name="course"> MTech<br>
+            <input type="radio" name="course"> BE<br>
+            <input type="radio" name="course"> BTech<br>
+            <input type="radio" name="course"> MBE<br>
+
+            <label>Hobbies:</label>
+            <input type="checkbox"> Reading<br>
+            <input type="checkbox"> Dancing<br>
+            <input type="checkbox"> Gaming<br>
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+
+</body>
+</html>

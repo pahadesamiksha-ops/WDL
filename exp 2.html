@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+<style>
+    h1{
+        background-color:red;
+        text-align:center;
+        padding:10px;
+        margin:0px;
+        font:bold;
+    }
+    .container{
+        width:200px;
+        margin:40px;
+        border:bold;
+        background-color:beige;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: 0.3s;
+
+    }
+    container:hover{
+        transform:scale(1.02)
+    }
+    label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+    }
+
+</style>
+</head>
+<body>
+    <h1> Advance survey form</h1>
+    <div>
+        <form>
+            <label>Name</label>
+            <input type="name" required><br><br>
+
+            <label>Email</label>
+            <input type="email" required><br><br>
+
+            <label>Phone no.</label>
+            <input type="tel" required><br><br>
+
+            <label>gender</label><br>
+            <input type="radio" name="gender"> Male<br>
+            <input type="radio" name="gender"> Female <br>
+            <input type="radio" name="gender"> Other <br><br>
+
+            <label>Skills</label><br>
+            <input type="Checkbox" name="skills">C<br>
+            <input type="checkbox" name="skills">C++ <br>
+            <input type="checkbox" name="skills">Python <br>
+            <input type="checkbox" name="skills">Java <br><br>
+
+            <label>Feedback</label><br>
+            <textarea row="3"></textarea><br>
+
+            <label>Submit</label><br>
+            <input type="submit" value="submit"><br>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Registration</title>
+
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        border-radius: 15px;
+        width: 320px;
+        color: white;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+    }
+
+    input:focus {
+        box-shadow: 0 0 8px white;
+    }
+
+    .error {
+        color: #ffcccc;
+        font-size: 13px;
+    }
+
+    .success {
+        color: #90ee90;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        border: none;
+        border-radius: 8px;
+        background: linear-gradient(to right, #00c9ff, #92fe9d);
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+<script>
+function validateForm() {
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let confirm = document.getElementById("confirm").value;
+    let phone = document.getElementById("phone").value;
+
+    let valid = true;
+
+    // Clear previous errors
+    document.getElementById("nameError").innerHTML = "";
+    document.getElementById("emailError").innerHTML = "";
+    document.getElementById("passError").innerHTML = "";
+    document.getElementById("confirmError").innerHTML = "";
+    document.getElementById("phoneError").innerHTML = "";
+    document.getElementById("successMsg").innerHTML = "";
+
+    // Name
+    if (name == "") {
+        document.getElementById("nameError").innerHTML = "Name is required";
+        valid = false;
+    }
+
+    // Email
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+        document.getElementById("emailError").innerHTML = "Invalid email";
+        valid = false;
+    }
+
+    // Password
+    if (password.length < 6) {
+        document.getElementById("passError").innerHTML = "Min 6 characters required";
+        valid = false;
+    }
+
+    // Confirm Password
+    if (password !== confirm) {
+        document.getElementById("confirmError").innerHTML = "Passwords do not match";
+        valid = false;
+    }
+
+    // Phone (10 digits)
+    let phonePattern = /^[0-9]{10}$/;
+    if (!phone.match(phonePattern)) {
+        document.getElementById("phoneError").innerHTML = "Enter valid 10-digit number";
+        valid = false;
+    }
+
+    // Success
+    if (valid) {
+        document.getElementById("successMsg").innerHTML = "Registration Successful!";
+    }
+
+    return false; // stop reload
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Student Registration</h2>
+
+    <form onsubmit="return validateForm()">
+
+        <input type="text" id="name" placeholder="Enter Name">
+        <div class="error" id="nameError"></div>
+
+        <input type="text" id="email" placeholder="Enter Email">
+        <div class="error" id="emailError"></div>
+
+        <input type="password" id="password" placeholder="Enter Password">
+        <div class="error" id="passError"></div>
+
+        <input type="password" id="confirm" placeholder="Confirm Password">
+        <div class="error" id="confirmError"></div>
+
+        <input type="text" id="phone" placeholder="Enter Phone Number">
+        <div class="error" id="phoneError"></div>
+
+        <button type="submit">Register</button>
+
+        <div class="success" id="successMsg"></div>
+
+    </form>
+</div>
+
+</body>
+</html>
